@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Add New Products</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div name="header">
+            <h1>Add Product</h1>	
+        </div>
+
+        <div name="body">
+            <table>
+                <form action="ProcessServlet" method="POST">
+                    <tbody>                
+                        <tr>
+                            <td align="right">Code:</td>
+                            <td>
+                                <input type="text" name="txtCode">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">Name:</td>
+                            <td>
+                                <input type="text" name="txtName">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">Description:</td>
+                            <td>                                
+                                <textarea name="txtDescription" rows="4" cols="20">
+                                </textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">Price:</td>
+                            <td>
+                                <input type="text" name="txtPrice">(USD)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">Category:</td>
+                            <td>
+                                <select name="listCategory">
+                                    <option value="Beverage">Beverage</option>
+                                    <option value="Food">Food</option>
+                                    <option value="Meat">Meat</option>
+                                    <option value="Vegetables">Vegetables</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>            
+                            <td>                                
+                            </td>
+                            <td>                                
+                                <input type="submit" value="Submit" name="btnSubmit"/>
+                                <input type="reset"/>                                                            
+                            </td>
+                            <td>                                
+                            </td>
+                        </tr>        			                
+                    </tfoot>                
+                </form>
+            </table>
+            <a href="index.html">Homepage</a>
+        </div>
+    </body>
+</html>

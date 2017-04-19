@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions name="CalculatorWebService" targetNamespace="http://jws.sample/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://jws.sample/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+<xs:schema elementFormDefault="unqualified" targetNamespace="http://jws.sample/" version="1.0" xmlns:tns="http://jws.sample/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="addNumber" type="tns:addNumber" />
+<xs:element name="addNumberResponse" type="tns:addNumberResponse" />
+<xs:element name="subNumber" type="tns:subNumber" />
+<xs:element name="subNumberResponse" type="tns:subNumberResponse" />
+<xs:complexType name="addNumber">
+<xs:sequence>
+<xs:element name="num1" type="xs:double" />
+<xs:element name="num2" type="xs:double" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="addNumberResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:double" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="subNumber">
+<xs:sequence>
+<xs:element name="num1" type="xs:double" />
+<xs:element name="num2" type="xs:double" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="subNumberResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:double" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="subNumber">
+    <wsdl:part element="tns:subNumber" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addNumber">
+    <wsdl:part element="tns:addNumber" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="subNumberResponse">
+    <wsdl:part element="tns:subNumberResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addNumberResponse">
+    <wsdl:part element="tns:addNumberResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="CalculatorWebService">
+    <wsdl:operation name="addNumber">
+      <wsdl:input message="tns:addNumber" name="addNumber">
+    </wsdl:input>
+      <wsdl:output message="tns:addNumberResponse" name="addNumberResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="subNumber">
+      <wsdl:input message="tns:subNumber" name="subNumber">
+    </wsdl:input>
+      <wsdl:output message="tns:subNumberResponse" name="subNumberResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CalculatorWebServiceSoapBinding" type="tns:CalculatorWebService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="addNumber">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="addNumber">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="addNumberResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="subNumber">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="subNumber">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="subNumberResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CalculatorWebService">
+    <wsdl:port binding="tns:CalculatorWebServiceSoapBinding" name="CalculatorWebServicePort">
+      <soap:address location="http://localhost:8080/CalculatorIA1161/CalculatorWebService/CalculatorWebService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

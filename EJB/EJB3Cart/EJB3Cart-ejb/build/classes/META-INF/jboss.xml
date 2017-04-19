@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss>
+  <enterprise-beans>
+    <session>
+      <ejb-name>CartSessionBean</ejb-name>
+      <jndi-name>CartJNDI</jndi-name>
+      <local-jndi-name>CartLocalJNDI</local-jndi-name>      
+      <resource-ref>
+        <res-ref-name>IA1161</res-ref-name>
+        <jndi-name>java:/IA1161</jndi-name>
+      </resource-ref>
+    </session>
+  </enterprise-beans>
+</jboss>
